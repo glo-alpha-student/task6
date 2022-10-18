@@ -33,19 +33,12 @@ function counter() {
             break;
 
     }
-
-
-
-
-
-
 }
+
 function process() {
 
     random = Math.ceil(Math.random() * 100);
 
     counter();
-
-
 }
 process();
