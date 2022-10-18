@@ -37,8 +37,6 @@ function process(x) {
         }
         counter();
     }
-
-
     counter();
 }
 process(number);
