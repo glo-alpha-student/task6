@@ -1,44 +1,44 @@
 'use strict';
 
-let random;
+let number;
 
-function counter() {
+function process(x) {
 
-    let ask = prompt('Угадай число от 1 до 100');
-    let number = parseInt(ask);
+    let random = Math.ceil(Math.random() * 100);
 
-    switch (true) {
+    function counter() {
 
-        case ask === null:
-            alert('Игра окончена');
-            break;
+        let ask = prompt('Угадай число от 1 до 100');
 
-        case !number:
-            alert('Введи число!');
-            counter();
-            break;
+        x = parseInt(ask);
 
-        case number > random:
-            alert('Загаданное число меньше');
-            counter();
-            break;
+        switch (true) {
 
-        case number < random:
-            alert('Загаданное число больше');
-            counter();
-            break;
+            case ask === null:
+                alert('Игра окончена');
+                return;
 
-        case number === random:
-            alert('Поздравляю, Вы угадали!!!');
-            break;
+            case !x:
+                alert('Введи число!');
+                break;
 
+            case x > random:
+                alert('Загаданное число меньше');
+                break;
+
+            case x < random:
+                alert('Загаданное число больше');
+                break;
+
+            case x === random:
+                alert('Поздравляю, Вы угадали!!!');
+                return;
+
+        }
+        counter();
     }
-}
 
-function process() {
-
-    random = Math.ceil(Math.random() * 100);
 
     counter();
 }
-process();
+process(number);
